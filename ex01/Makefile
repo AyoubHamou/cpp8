@@ -1,10 +1,10 @@
-NAME = easyfind
+NAME = span
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 CXX= c++
 
-SRCS  = main.cpp\
+SRCS  = main.cpp Span.cpp\
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -20,3 +20,4 @@ fclean : clean
 	rm -fr $(NAME)
 
 re : fclean all
+
