@@ -5,15 +5,15 @@
 template <typename T> class MutantStack : public std::stack<T> {
 private:
 public:
-  MutantStack<T>() {}
-  MutantStack<T>(const MutantStack<T> &other) { *this = other; }
-  MutantStack<T> &operator=(const MutantStack<T> &other) {
+  MutantStack() :std::stack<T>()  {}
+  MutantStack(const MutantStack<T> &other) :std::stack<T>(other) { *this = other; }
+  MutantStack<T> &operator=(const MutantStack<T> &other){
     if (this != &other) {
-      this->c = other.c;
+			std::stack<T>::operator=(other);
     }
     return *this;
   }
-  ~MutantStack<T>() {}
+  ~MutantStack() {}
 
   // define an iterator, from dqeue
   typedef typename std::deque<T>::iterator iterator;

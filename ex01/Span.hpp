@@ -6,6 +6,9 @@
 #include <stdexcept>
 #include <vector>
 
+typedef std::vector<int>::iterator it;
+
+
 class Span {
 private:
   std::vector<int> vec;
@@ -21,5 +24,7 @@ public:
   void addNumber(int n);
   int shortestSpan();
   int longestSpan();
-  void fillVector(int n);
+	void fillVector(it begin, it end);
 };
+
+

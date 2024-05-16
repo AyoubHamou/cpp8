@@ -1,5 +1,5 @@
 #include "MutantStack.hpp"
-
+#include<list>
 #include "iostream"
 
 int main(void) {
@@ -34,5 +34,30 @@ int main(void) {
   for (; rit != rite; rit++)
     std::cout << *rit << std::endl;
   std::stack<int> s(mstack);
+
+
+
+	  std::cout
+      << "--------------------- Testing using the list; --------------------- "
+      << std::endl;
+
+  std::list<int> list_stack;
+  list_stack.push_back(5);
+  list_stack.push_back(17);
+  std::cout << list_stack.back() << std::endl;
+  list_stack.pop_back();
+  std::cout << list_stack.size() << std::endl;
+  list_stack.push_back(3);
+  list_stack.push_back(5);
+  list_stack.push_back(737);
+  list_stack.push_back(0);
+  std::list<int>::iterator list_it = list_stack.begin();
+  std::list<int>::iterator list_ite = list_stack.end();
+  ++list_it;
+  --list_it;
+  while (list_it != list_ite) {
+    std::cout << *list_it << std::endl;
+    ++list_it;
+  }
   return 0;
 }
